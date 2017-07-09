@@ -15,6 +15,7 @@ dependencies {
     compile "org.springframework.boot:spring-boot-starter-actuator"
     compile "io.pivotal.spring.cloud:spring-cloud-services-starter-service-registry"
     compile "io.pivotal.spring.cloud:spring-cloud-services-starter-circuit-breaker"
+    compile "io.pivotal.spring.cloud:spring-cloud-services-starter-config-client"
 
     compile "org.springframework.cloud:spring-cloud-starter-sleuth"
     compile "org.springframework.cloud:spring-cloud-sleuth-stream"
@@ -35,6 +36,7 @@ bootRun.environment([
     "APPLICATION_OAUTH_ENABLED": true,
     "SECURITY_OAUTH2_CLIENT_CLIENT_ID": "YOUR_CLIENT_ID_HERE",
     "SECURITY_OAUTH2_CLIENT_CLIENT_SECRET": "YOUR_CLIENT_SECRET_HERE",
+    "REGISTRATION_SERVER_ENDPOINT": "http://registration-server",
     "SECURITY_USER_NAME": "actuator",
     "SECURITY_USER_PASSWORD": "operations4red"
 ])
