@@ -26,7 +26,7 @@ public class AllocationController {
     }
 
 
-    @PostMapping("{allocations}")
+    @PostMapping("allocations")
     public ResponseEntity<AllocationInfo> create(@RequestBody AllocationForm form) {
 
         if (projectIsActive(form.projectId)) {
@@ -37,7 +37,7 @@ public class AllocationController {
         return new ResponseEntity<>(HttpStatus.SERVICE_UNAVAILABLE);
     }
 
-    @GetMapping("{allocations}")
+    @GetMapping("allocations")
     public List<AllocationInfo> list(@RequestParam long projectId) {
         return gateway.findAllByProjectId(projectId)
             .stream()
