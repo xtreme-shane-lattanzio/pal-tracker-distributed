@@ -1,8 +1,10 @@
 applications:
 - name: tracker-registration
   path: ./applications/registration-server/build/libs/registration-server.jar
-  host: registration-pal-INITIALS
+  host: registration-pal-sl
   memory: 1G
   instances: 1
+  env:
+    REGISTRATION_SERVER_ENDPOINT: http://registration-pal-sl.apps.quandary.pal.pivotal.io
   services:
   - tracker-registration-database
