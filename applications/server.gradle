@@ -28,6 +28,8 @@ dependencies {
     compile "org.springframework.cloud:spring-cloud-sleuth-stream"
     compile "org.springframework.cloud:spring-cloud-starter-stream-rabbit"
 
+    compile "io.pivotal.spring.cloud:spring-cloud-services-starter-config-client"
+
     testCompile project(":components:test-support")
 }
 
@@ -36,5 +38,6 @@ bootRun.environment([
         "SECURITY_OAUTH2_CLIENT_CLIENT_ID": "6ecd6d8b-58ec-404a-a686-b1f7e498a2ef",
         "SECURITY_OAUTH2_CLIENT_CLIENT_SECRET": "75297dcc-7472-43c8-b50b-6f10f053572d",
         "SECURITY_USER_NAME": "actuator",
-        "SECURITY_USER_PASSWORD": "operations4red"
+        "SECURITY_USER_PASSWORD": "operations4red",
+        "REGISTRATION_SERVER_ENDPOINT": "http://registration-server"
 ])
