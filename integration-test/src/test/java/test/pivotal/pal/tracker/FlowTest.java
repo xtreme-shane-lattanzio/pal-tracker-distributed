@@ -106,7 +106,7 @@ public class FlowTest {
 
 
         response = httpClient.get(allocationsServerUrl("/"));
-        assertThat(response.body).isEqualTo("Noop!");
+        assertThat(response.body).isEqualTo("Hi Shane!");
 
         response = httpClient.post(
             allocationsServerUrl("/allocations"), jsonMapBuilder()
@@ -125,7 +125,7 @@ public class FlowTest {
 
 
         response = httpClient.get(backlogServerUrl("/"));
-        assertThat(response.body).isEqualTo("Noop!");
+        assertThat(response.body).isEqualTo("Hi Shane!");
 
         response = httpClient.post(backlogServerUrl("/stories"), jsonMapBuilder()
             .put("projectId", createdProjectId)
@@ -140,7 +140,7 @@ public class FlowTest {
 
 
         response = httpClient.get(timesheetsServerUrl("/"));
-        assertThat(response.body).isEqualTo("Noop!");
+        assertThat(response.body).isEqualTo("Hi Shane!");
 
         response = httpClient.post(timesheetsServerUrl("/time-entries"), jsonMapBuilder()
             .put("projectId", createdProjectId)
