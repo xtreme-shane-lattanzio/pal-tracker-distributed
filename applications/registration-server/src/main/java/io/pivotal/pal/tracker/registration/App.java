@@ -11,14 +11,15 @@ import java.util.TimeZone;
 
 
 @ComponentScan({
-    "io.pivotal.pal.tracker.accounts",
-    "io.pivotal.pal.tracker.restsupport",
-    "io.pivotal.pal.tracker.projects",
-    "io.pivotal.pal.tracker.users",
+        "io.pivotal.pal.tracker.accounts",
+        "io.pivotal.pal.tracker.restsupport",
+        "io.pivotal.pal.tracker.projects",
+        "io.pivotal.pal.tracker.users",
         "io.pivotal.pal.tracker.registration"
 })
 @EnableWebSecurity
 @EnableResourceServer
+
 @EnableEurekaClient
 @SpringBootApplication
 public class App {

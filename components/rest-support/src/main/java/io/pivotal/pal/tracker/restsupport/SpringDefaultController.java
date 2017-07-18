@@ -8,6 +8,6 @@ public class SpringDefaultController {
 
     @GetMapping("/")
     public String defaultRoute() {
-        return "Noop!";
+        return "Hi Shane!";
     }
 }
