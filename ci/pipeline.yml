@@ -18,7 +18,7 @@ resources:
   source:
     bucket: {{gcs-bucket}}
     endpoint: storage.googleapis.com
-    key: pal-tracker/current-version
+    key: pal-tracker-distributed/version
     access_key_id: {{gcs-access-key-id}}
     secret_access_key: {{gcs-secret-access-key}}
 
@@ -26,28 +26,28 @@ resources:
   type: google-cloud-storage
   source:
     bucket: {{gcs-bucket}}
-    regexp: pal-tracker/allocations-server-(.*).jar
+    regexp: releases/pal-tracker-distributed/allocations-server-(.*).jar
     json_key: {{gcs-json}}
 
 - name: backlog-artifacts
   type: google-cloud-storage
   source:
     bucket: {{gcs-bucket}}
-    regexp: pal-tracker/backlog-server-(.*).jar
+    regexp: releases/pal-tracker-distributed/backlog-server-(.*).jar
     json_key: {{gcs-json}}
 
 - name: registration-artifacts
   type: google-cloud-storage
   source:
     bucket: {{gcs-bucket}}
-    regexp: pal-tracker/registration-server-(.*).jar
+    regexp: releases/pal-tracker-distributed/registration-server-(.*).jar
     json_key: {{gcs-json}}
 
 - name: timesheets-artifacts
   type: google-cloud-storage
   source:
     bucket: {{gcs-bucket}}
-    regexp: pal-tracker/timesheets-server-(.*).jar
+    regexp: releases/pal-tracker-distributed/timesheets-server-(.*).jar
     json_key: {{gcs-json}}
 
 - name: cf
