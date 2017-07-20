@@ -1,4 +1,10 @@
 ---
+resource_types:
+  - name: google-cloud-storage
+    type: docker-image
+    source:
+      repository: frodenas/gcs-resource
+
 resources:
 - name: pal-tracker
   type: git
@@ -10,42 +16,39 @@ resources:
 - name: version
   type: semver
   source:
-    bucket: {{aws-bucket}}
+    bucket: {{gcs-bucket}}
+    endpoint: storage.googleapis.com
     key: pal-tracker/current-version
-    access_key_id: {{aws-access-key-id}}
-    secret_access_key: {{aws-secret-access-key}}
+    access_key_id: {{gcs-access-key-id}}
+    secret_access_key: {{gcs-secret-access-key}}
 
 - name: allocations-artifacts
-  type: s3
+  type: google-cloud-storage
   source:
-    bucket: {{aws-bucket}}
+    bucket: {{gcs-bucket}}
     regexp: pal-tracker/allocations-server-(.*).jar
-    access_key_id: {{aws-access-key-id}}
-    secret_access_key: {{aws-secret-access-key}}
+    json_key: {{gcs-json}}
 
 - name: backlog-artifacts
-  type: s3
+  type: google-cloud-storage
   source:
-    bucket: {{aws-bucket}}
+    bucket: {{gcs-bucket}}
     regexp: pal-tracker/backlog-server-(.*).jar
-    access_key_id: {{aws-access-key-id}}
-    secret_access_key: {{aws-secret-access-key}}
+    json_key: {{gcs-json}}
 
 - name: registration-artifacts
-  type: s3
+  type: google-cloud-storage
   source:
-    bucket: {{aws-bucket}}
+    bucket: {{gcs-bucket}}
     regexp: pal-tracker/registration-server-(.*).jar
-    access_key_id: {{aws-access-key-id}}
-    secret_access_key: {{aws-secret-access-key}}
+    json_key: {{gcs-json}}
 
 - name: timesheets-artifacts
-  type: s3
+  type: google-cloud-storage
   source:
-    bucket: {{aws-bucket}}
+    bucket: {{gcs-bucket}}
     regexp: pal-tracker/timesheets-server-(.*).jar
-    access_key_id: {{aws-access-key-id}}
-    secret_access_key: {{aws-secret-access-key}}
+    json_key: {{gcs-json}}
 
 - name: cf
   type: cf
