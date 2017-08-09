@@ -5,7 +5,7 @@ applications:
   memory: 1G
   instances: 1
   env:
-    TRUST_CERTS: api.sys.quandary.pal.pivotal.io,uaa.sys.quandary.pal.pivotal.io
+    TRUST_CERTS: api.run.pivotal.io,uaa.run.pivotal.io
     GRANT_TYPE: client_credentials
   services:
   - tracker-allocations-database
